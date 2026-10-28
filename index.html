@@ -328,7 +328,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <div class="hero-price" id="hPrice">$152.742</div>
       <div class="hero-list">Precio de lista: <span id="hList">$1.832.900</span></div>
       <div class="hero-ctas">
-        <a class="btn btn-accent" id="hCart" href="#">Agregar al carrito</a>
+        <a class="btn btn-accent" id="hCart" href="#">Comprar</a>
         <a class="btn btn-ghost" id="hInfo" href="#">Ver detalles</a>
       </div>
       <div class="countdown" role="timer" aria-label="Tiempo restante de la promo">
@@ -374,7 +374,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <div class="price" id="pPrice"></div>
       <div class="meta" id="pMeta"></div>
       <div class="panel-ctas">
-        <a class="btn btn-ground" id="pCart" href="#">Agregar al carrito</a>
+        <a class="btn btn-ground" id="pCart" href="#">Comprar</a>
         <a class="btn btn-outline" id="pInfo" href="#">Ver detalles</a>
       </div>
     </div>
@@ -453,16 +453,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
    ========================================================= */
 const CONFIG = {
   promoEnd:   '2026-11-06T10:00:00-03:00',
-  whatsapp:   '#',   // ej: 'https://wa.me/54911XXXXXXXX'
-  store:      '#',   // ej: 'https://www.tutienda.com.ar'
+  whatsapp:   'https://wa.me/5491176685027',
+  store:      'https://www.gst3d.com.ar/',
   slideEveryMs: 6000
 };
 const P = { // precio de lista en pesos, cuota = lista / 12
-  'a2l-combo':     { n:'A2L Combo',     img:'assets/a2l-combo.webp',     w:876, h:661, t:1832900, url:'#', cart:'#' },
-  'a1-mini':       { n:'A1 mini',       img:'assets/a1-mini.webp',       w:500, h:678, t:578900,  url:'#', cart:'#' },
-  'a1-mini-combo': { n:'A1 mini Combo', img:'assets/a1-mini-combo.webp', w:936, h:733, t:1056900, url:'#', cart:'#' },
-  'a1':            { n:'A1',            img:'assets/a1.webp',            w:591, h:655, t:968900,  url:'#', cart:'#' },
-  'a2l':           { n:'A2L',           img:'assets/a2l.webp',           w:745, h:804, t:1373900, url:'#', cart:'#' }
+  'a2l-combo':     { n:'A2L Combo',     img:'assets/a2l-combo.webp',     w:876, h:661, t:1832900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a2l-combo-eqmnl/' },
+  'a1-mini':       { n:'A1 mini',       img:'assets/a1-mini.webp',       w:500, h:678, t:578900,  url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-mini/' },
+  'a1-mini-combo': { n:'A1 mini Combo', img:'assets/a1-mini-combo.webp', w:936, h:733, t:1056900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-mini-combo/' },
+  'a1':            { n:'A1',            img:'assets/a1.webp',            w:591, h:655, t:968900,  url:'https://www.gst3d.com.ar/productos/bambu-lab-a1/' },
+  'a2l':           { n:'A2L',           img:'assets/a2l.webp',           w:745, h:804, t:1373900, url:'https://www.gst3d.com.ar/productos/impresora-3d-bambu-lab-a2l-estandar-vtyi2/' }
 };
 const SLIDES  = ['a2l-combo','a1-mini','a1-mini-combo','a1','a2l'];
 const CATALOG = ['a1-mini','a1-mini-combo','a1','a2l','a2l-combo'];
@@ -552,8 +552,8 @@ function renderSlide() {
   $('hPrice').textContent = cuota(p);
   $('hPrice').style.color = col;
   $('hList').textContent = fmt(p.t);
-  $('hCart').href = p.cart; $('hInfo').href = p.url;
-  $('hCart').setAttribute('aria-label', `Agregar ${p.n} al carrito`);
+  $('hCart').href = p.url; $('hInfo').href = p.url;
+  $('hCart').setAttribute('aria-label', `Comprar ${p.n}`);
   $('hInfo').setAttribute('aria-label', `Ver detalles de ${p.n}`);
   hImg.src = p.img; hImg.alt = 'Bambu Lab ' + p.n;
   placeHero();
@@ -624,7 +624,7 @@ function renderPanel(animate) {
     $('pReasons').innerHTML = REASONS[mk].map((r) => `<li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>${r}</li>`).join('');
     $('pPrice').textContent = cuota(q);
     $('pMeta').textContent = `Precio de lista: ${fmt(q.t)} · Por transferencia: ${fmt(Math.round(q.t * .9))}`;
-    $('pCart').href = q.cart; $('pInfo').href = q.url;
+    $('pCart').href = q.url; $('pInfo').href = q.url;
     $('aLbl').textContent = swap ? 'LA RECOMENDADA PARA ESTO' : 'TAMBIÉN TE PUEDE SERVIR';
     $('aImg').src = a.img; $('aImg').alt = 'Bambu Lab ' + a.n;
     $('aName').textContent = a.n;
@@ -651,7 +651,7 @@ $('cards').innerHTML = CATALOG.map((key) => {
       <div class="lead">12 cuotas sin interés de</div>
       <div class="price">${cuota(p)}</div>
       <div class="meta">Precio de lista: ${fmt(p.t)}</div>
-      <a class="btn btn-ground" href="${p.cart}" aria-label="Agregar ${p.n} al carrito">Agregar al carrito</a>
+      <a class="btn btn-ground" href="${p.url}" aria-label="Comprar ${p.n}">Comprar</a>
     </div>
   </li>`;
 }).join('');
