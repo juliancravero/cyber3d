@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cyber 3D · Bambu Lab en 12 cuotas sin interés | GST3D</title>
-<meta name="description" content="Del 28/10 al 6/11: impresoras Bambu Lab en 12 cuotas sin interés, envío gratis a todo el país y 10% off por transferencia.">
+<title>Cyber 3D · Impresoras 3D en hasta 12 cuotas sin interés | GST3D</title>
+<meta name="description" content="Del 28/10 al 6/11: impresoras Bambu Lab, Snapmaker y Anycubic en hasta 12 cuotas sin interés, envío gratis a todo el país y 10% off por transferencia.">
 <meta name="theme-color" content="#6A3BD8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 <style>
 :root{
   --ground:#6A3BD8; --accent:#3FF0D8; --lilac:#C45BF0; --violet:#B79BFF;
-  --ink:#1E1440; --muted:#6B6385; --line:#E6DEFA; --soft:#F3EEFF; --tint:#FAF8FF;
+  --ink:#1E1440; --muted:#6B6385; --line:#E6DEFA; --soft:#F3EEFF; --tint:#FAF8FF; --blue:#2F4BD6;
   --display:Unbounded,'Arial Black',Arial,sans-serif;
   --body:Manrope,'Helvetica Neue',Arial,sans-serif;
   --gutter:120px;
@@ -135,12 +135,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* ---------- Catálogo ---------- */
 .catalog{padding:60px var(--gutter) 140px;scroll-margin-top:80px}
 .catalog h2{margin:0;text-align:center;font-family:var(--display);font-size:34px;font-weight:900}
-.cards{list-style:none;margin:48px auto 0;padding:0;max-width:1200px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.cards{list-style:none;margin:48px auto 0;padding:0;max-width:1200px;display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.cards .card{width:calc((100% - 80px) / 5)}
 .card{border-radius:20px;background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease}
 .card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(106,59,216,.22)}
 .card-img{height:190px;background:var(--soft);display:flex;align-items:flex-end;justify-content:center;padding:14px 14px 14px}
 .card-img img{max-height:160px;max-width:188px;width:auto;height:auto}
 .card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px;flex-grow:1}
+.card .brand{font-size:11px;font-weight:800;letter-spacing:2px;color:#8A7DB3}
 .card h3{margin:0;font-family:var(--display);font-size:18px;line-height:1.1;font-weight:800}
 .card .lead{margin-top:6px;font-size:13px;font-weight:700}
 .card .price{font-family:var(--display);font-size:24px;line-height:1;font-weight:900;color:var(--ground)}
@@ -150,7 +152,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .card .btn{margin-top:auto;height:44px;border-radius:12px;font-size:14px}
 
 /* ---------- Combos ---------- */
-.combos-wrap{padding:0 var(--gutter);margin-top:16px}
+.combos-wrap{padding:0 var(--gutter);margin-top:60px}
 .combos{position:relative;max-width:1200px;height:340px;margin:0 auto;border-radius:28px;background:var(--lilac);overflow:hidden;color:#fff;scroll-margin-top:100px}
 .combos-copy{position:absolute;left:64px;top:64px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;z-index:2}
 .combos-copy .kick{font-size:14px;font-weight:800;letter-spacing:3px;color:var(--ground)}
@@ -191,13 +193,63 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .legal{margin:47px 0 0;font-size:12px;font-weight:500;color:rgba(255,255,255,.65);line-height:1.5}
 
 /* ---------- Responsive ---------- */
+
+/* ---------- Barra novedades ---------- */
+.news{background:linear-gradient(90deg,#C45BF0 0%,#9A55E6 45%,#3554DD 100%);color:#fff}
+.news .wrap{min-height:44px;display:flex;align-items:center;justify-content:center;gap:18px;padding:6px 20px;flex-wrap:wrap;text-align:center}
+.news strong{font-family:var(--display);font-size:15px;font-weight:800}
+.news a{padding:6px 16px;border-radius:999px;background:#fff;color:var(--ground);font-size:13px;font-weight:800;text-decoration:none;white-space:nowrap}
+.news a:hover{color:var(--lilac)}
+.hero{transition:background-color .5s ease}
+.hero[data-brand="Snapmaker"]{background:var(--lilac)}
+.hero[data-brand="Anycubic"]{background:var(--blue)}
+
+/* ---------- Se suman ---------- */
+.joins{background:var(--tint);padding:60px 20px 72px;scroll-margin-top:80px}
+.join-grid{max-width:1100px;margin:36px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-items:start}
+.brandbox{border-radius:28px;background:#fff;border:1px solid var(--line);overflow:hidden;box-shadow:0 18px 40px rgba(106,59,216,.10);scroll-margin-top:100px}
+.brandbox-head{padding:28px 26px 26px;color:#fff;background:var(--lilac)}
+.brandbox.any .brandbox-head{background:linear-gradient(120deg,#131C63 0%,#2440C8 58%,#4F7DFF 100%)}
+.brandbox-head .kick{font-size:11px;font-weight:800;letter-spacing:3px;opacity:.9}
+.brandbox-head h3{margin:6px 0 10px;font-family:var(--display);font-size:40px;line-height:1;font-weight:900;letter-spacing:.5px}
+.brandbox-head .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brandbox-head .chip{padding:7px 14px;border-radius:999px;background:#fff;color:var(--ground);font-family:var(--display);font-size:13px;font-weight:900;letter-spacing:.5px}
+.brandbox.any .chip{color:var(--blue)}
+.brandbox-head .what{font-size:13px;font-weight:700}
+.minis{list-style:none;margin:0;padding:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.mini{border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease}
+.mini:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(106,59,216,.18)}
+.mini-img{height:152px;background:var(--soft);display:flex;align-items:flex-end;justify-content:center;padding:10px}
+.any .mini-img{background:#E9EEFF}
+.mini-img img{max-height:132px;max-width:100%;width:auto;height:auto}
+.mini-img .ph{width:96px;height:96px;margin-bottom:14px;opacity:.85}
+.mini-body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:3px;flex-grow:1}
+.mini h4{margin:0 0 6px;font-family:var(--display);font-size:16px;line-height:1.2;font-weight:800}
+.mini h4 a{color:inherit;text-decoration:none}
+.mini .lead{font-size:12px;font-weight:600}
+.mini .price{font-family:var(--display);font-size:24px;line-height:1.05;font-weight:900;color:var(--ground)}
+.any .mini .price{color:var(--blue)}
+.mini .meta{font-size:11px;font-weight:500;color:var(--muted)}
+.mini .transf{font-size:11px;font-weight:700;margin-bottom:12px}
+.mini .btn{margin-top:auto;height:40px;border-radius:12px;font-size:13px;background:var(--ground);color:#fff}
+.any .mini .btn{background:var(--blue)}
+@media (max-width:980px){.join-grid{grid-template-columns:1fr;max-width:600px}}
+@media (max-width:640px){
+  .news strong{font-size:13px}
+  .joins{padding:44px 16px 48px}
+  .brandbox-head h3{font-size:32px}
+  .minis{padding:14px;gap:12px}
+  .mini-img{height:120px} .mini-img img{max-height:104px}
+  .mini h4{font-size:14px} .mini .price{font-size:20px}
+}
+
 @media (max-width:1280px){
   :root{--gutter:56px}
   .hero .wrap{padding-left:96px;padding-right:96px;grid-template-columns:minmax(0,1fr) minmax(0,520px)}
   .hero-price{font-size:72px}
   .panel{max-width:960px}
   .panel-img{width:300px} .panel-info{width:400px;padding:28px 28px}
-  .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cards .card{width:calc((100% - 40px) / 3)}
   .combos-art{width:520px;right:-20px}
   .combos-art .c1{width:280px;top:80px} .combos-art .c2{left:240px;width:280px;top:90px}
   .nav{gap:28px}
@@ -265,7 +317,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .catalog h2{font-size:26px;padding:0 20px}
   .cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:12px 20px 20px;margin-top:20px;scrollbar-width:none}
   .cards::-webkit-scrollbar{display:none}
-  .card{flex:0 0 70%;scroll-snap-align:center}
+  .cards .card{flex:0 0 70%;width:auto;scroll-snap-align:center}
+  .cards{justify-content:flex-start}
   .card:hover{transform:none;box-shadow:none}
   .combos{padding:36px 24px 0;border-radius:22px}
   .combos-copy h2{font-size:30px}
@@ -297,11 +350,20 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <a href="#impresoras">Ofertas</a>
       <a href="#elegi">¿Cuál elegir?</a>
       <a href="#combos">Combos</a>
+      <a href="#snapmaker">Snapmaker</a>
+      <a href="#anycubic">Anycubic</a>
       <a href="#preguntas">Preguntas</a>
     </nav>
     <a class="btn" href="#impresoras">Ver impresoras</a>
   </div>
 </header>
+
+<div class="news">
+  <div class="wrap">
+    <strong>¡NUEVO! Se suman Snapmaker y Anycubic al Cyber 3D</strong>
+    <a href="#novedades">Ver novedades →</a>
+  </div>
+</div>
 
 <main id="top">
 
@@ -323,8 +385,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         </svg>
         <div class="pill">DEL 28/10 AL 6/11</div>
       </div>
-      <div class="hero-model">BAMBU LAB <span id="hName">A2L COMBO</span></div>
-      <div class="hero-lead">12 CUOTAS SIN INTERÉS DE</div>
+      <div class="hero-model"><span id="hBrand" style="color:inherit">BAMBU LAB</span> <span id="hName">A2L COMBO</span></div>
+      <div class="hero-lead" id="hLead">12 CUOTAS SIN INTERÉS DE</div>
       <div class="hero-price" id="hPrice">$152.742</div>
       <div class="hero-list">Precio de lista: <span id="hList">$1.832.900</span></div>
       <div class="hero-ctas">
@@ -350,7 +412,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </section>
 
 <!-- CINTA -->
-<div class="ticker" aria-label="12 cuotas sin interés, envío gratis a todo el país, 10% off por transferencia, del 28/10 al 6/11">
+<div class="ticker" aria-label="Hasta 12 cuotas sin interés, envío gratis a todo el país, 10% off por transferencia, del 28/10 al 6/11">
   <div class="ticker-track" id="ticker" aria-hidden="true"></div>
 </div>
 
@@ -358,7 +420,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="choose" id="elegi">
   <div class="sec-head">
     <h2>¿Qué querés imprimir?</h2>
-    <p>Elegí y te mostramos la Bambu Lab ideal para vos</p>
+    <p>Elegí y te mostramos la impresora ideal para vos</p>
   </div>
   <div class="tabs" role="tablist" aria-label="Qué querés imprimir" id="tabs"></div>
   <div class="panel" id="panel" role="tabpanel" aria-live="polite">
@@ -367,10 +429,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <img id="pImg" src="" alt="">
     </div>
     <div class="panel-info">
-      <div class="kicker">BAMBU LAB</div>
+      <div class="kicker" id="pBrand">BAMBU LAB</div>
       <h3 id="pName"></h3>
       <ul class="reasons" id="pReasons"></ul>
-      <div class="lead">12 cuotas sin interés de</div>
+      <div class="lead" id="pLead">12 cuotas sin interés de</div>
       <div class="price" id="pPrice"></div>
       <div class="meta" id="pMeta"></div>
       <div class="panel-ctas">
@@ -393,6 +455,32 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="catalog" id="impresoras">
   <h2>Todas las Bambu Lab</h2>
   <ul class="cards" id="cards"></ul>
+</section>
+
+<!-- SE SUMAN -->
+<section class="joins" id="novedades">
+  <div class="sec-head">
+    <h2>Se suman al Cyber 3D</h2>
+    <p>Desde el 30/10, también Snapmaker y Anycubic con cuotas sin interés</p>
+  </div>
+  <div class="join-grid">
+    <article class="brandbox snap" id="snapmaker">
+      <div class="brandbox-head">
+        <div class="kick">SE SUMA AL CYBER 3D</div>
+        <h3>SNAPMAKER</h3>
+        <div class="row"><span class="chip">12 CUOTAS SIN INTERÉS</span><span class="what">U1 y Top Cover</span></div>
+      </div>
+      <ul class="minis" data-items="snapmaker-u1,top-cover"></ul>
+    </article>
+    <article class="brandbox any" id="anycubic">
+      <div class="brandbox-head">
+        <div class="kick">SE SUMA AL CYBER 3D</div>
+        <h3>ANYCUBIC</h3>
+        <div class="row"><span class="chip">6 CUOTAS SIN INTERÉS</span><span class="what">Kobra X y resina</span></div>
+      </div>
+      <ul class="minis" data-items="kobra-x,resina"></ul>
+    </article>
+  </div>
 </section>
 
 <!-- COMBOS -->
@@ -424,7 +512,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="wrap">
     <div class="foot-cta">
       <div>
-        <h2>Tu Bambu Lab en <span>12 cuotas</span> sin interés</h2>
+        <h2>Tu impresora 3D en hasta <span>12 cuotas</span> sin interés</h2>
         <p>La promo termina el 6/11 a las 10 h. Envío gratis a todo el país.</p>
       </div>
       <a class="btn" href="#impresoras">Elegí tu impresora</a>
@@ -436,6 +524,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <a href="#impresoras">Ofertas</a>
         <a href="#elegi">¿Cuál elegir?</a>
         <a href="#combos">Combos</a>
+        <a href="#snapmaker">Snapmaker</a>
+        <a href="#anycubic">Anycubic</a>
         <a href="#preguntas">Preguntas</a>
       </nav>
       <div class="foot-btns">
@@ -443,7 +533,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <a class="btn store" id="storeLink" href="#">Ir a la tienda completa</a>
       </div>
     </div>
-    <p class="legal">Promoción válida desde el 28/10 a las 10 h hasta el 6/11 a las 10 h de 2026, o hasta agotar stock. 12 cuotas sin interés con tarjetas seleccionadas. 10% off pagando por transferencia bancaria.</p>
+    <p class="legal">Promoción válida desde el 28/10 a las 10 h hasta el 6/11 a las 10 h de 2026, o hasta agotar stock. 12 cuotas sin interés en impresoras Bambu Lab y Snapmaker U1, y 6 cuotas sin interés en Anycubic Kobra X, con tarjetas seleccionadas. 10% off pagando por transferencia bancaria.</p>
   </div>
 </footer>
 
@@ -458,13 +548,17 @@ const CONFIG = {
   slideEveryMs: 6000
 };
 const P = { // precio de lista en pesos, cuota = lista / 12
-  'a2l-combo':     { n:'A2L Combo',     img:'assets/a2l-combo.webp',     w:876, h:661, t:1832900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a2l-combo-eqmnl/' },
-  'a1-mini':       { n:'A1 mini',       img:'assets/a1-mini.webp',       w:500, h:678, t:578900,  url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-mini/' },
-  'a1-mini-combo': { n:'A1 mini Combo', img:'assets/a1-mini-combo.webp', w:936, h:733, t:1056900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-mini-combo/' },
-  'a1':            { n:'A1',            img:'assets/a1.webp',            w:591, h:655, t:968900,  url:'https://www.gst3d.com.ar/productos/bambu-lab-a1/' },
-  'a2l':           { n:'A2L',           img:'assets/a2l.webp',           w:745, h:804, t:1373900, url:'https://www.gst3d.com.ar/productos/impresora-3d-bambu-lab-a2l-estandar-vtyi2/' }
+  'a2l-combo':     { b:'Bambu Lab', c:12, n:'A2L Combo',     img:'assets/a2l-combo.webp',     w:876, h:661, t:1832900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a2l-combo-eqmnl/' },
+  'a1-mini':       { b:'Bambu Lab', c:12, n:'A1 mini',       img:'assets/a1-mini.webp',       w:500, h:678, t:578900,  url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-mini/' },
+  'a1-mini-combo': { b:'Bambu Lab', c:12, n:'A1 mini Combo', img:'assets/a1-mini-combo.webp', w:936, h:733, t:1056900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-mini-combo/' },
+  'a1':            { b:'Bambu Lab', c:12, n:'A1',            img:'assets/a1.webp',            w:591, h:655, t:968900,  url:'https://www.gst3d.com.ar/productos/bambu-lab-a1/' },
+  'a2l':           { b:'Bambu Lab', c:12, n:'A2L',           img:'assets/a2l.webp',           w:745, h:804, t:1373900, url:'https://www.gst3d.com.ar/productos/impresora-3d-bambu-lab-a2l-estandar-vtyi2/' },
+  'snapmaker-u1':  { b:'Snapmaker', c:12, n:'U1',      img:'assets/snapmaker-u1.webp',  w:750, h:800, t:2290000, url:'https://www.gst3d.com.ar/productos/preventa-snapmaker-u1/', d:'Snapmaker U1' },
+  'kobra-x':       { b:'Anycubic',  c:6,  n:'Kobra X', img:'assets/kobra-x.webp',       w:507, h:752, t:1089000, url:'https://www.gst3d.com.ar/productos/preventa-septiembre-impresora-3d-anycubic-kobra-x-14mdb/', d:'Anycubic Kobra X' },
+  'top-cover':     { b:'Snapmaker', c:12, n:'Top Cover Popcap', d:'Top Cover Popcap', img:'assets/top-cover.webp', w:800, h:651, t:219000, url:'https://www.gst3d.com.ar/productos/top-cover-popcap-tapa-superior-snapmaker-u1-10xen/' },
+  'resina':        { b:'Anycubic',  c:6,  n:'Resina estándar 1 kg', d:'Resina estándar 1 kg', img:'assets/resina.webp', w:539, h:644, t:34990, url:'https://www.gst3d.com.ar/productos/resina-estandar-1kg-anycubic-dtk5k/' }
 };
-const SLIDES  = ['a2l-combo','a1-mini','a1-mini-combo','a1','a2l'];
+const SLIDES  = ['a2l-combo','a1-mini','a1-mini-combo','a1','a2l','snapmaker-u1','kobra-x'];
 const CATALOG = ['a1-mini','a1-mini-combo','a1','a2l','a2l-combo'];
 const REASONS = {
   'a2l-combo':     ['Piezas grandes y a todo color','Hasta 4 colores sin cambiar el filamento a mano','La más completa de la línea'],
@@ -479,17 +573,18 @@ const TABS = [
   { label:'Proyectos grandes', b:'La mejor para piezas grandes',   p:'a2l',           alt:'a2l-combo', why:'Si además querés imprimir a color' }
 ];
 const FAQ = [
-  ['¿Con qué tarjetas puedo pagar en 12 cuotas sin interés?','Con tarjetas de crédito bancarias seleccionadas. Al elegir el medio de pago vas a ver todas las opciones disponibles para tu tarjeta.'],
+  ['¿En cuántas cuotas sin interés puedo pagar?','Las impresoras Bambu Lab y la Snapmaker U1 van en 12 cuotas sin interés, y la Anycubic Kobra X en 6, con tarjetas de crédito bancarias seleccionadas. Al elegir el medio de pago vas a ver todas las opciones disponibles para tu tarjeta.'],
   ['¿Cómo aprovecho el 10% off?','Elegí transferencia bancaria como medio de pago al finalizar la compra y el descuento se aplica sobre el precio de lista.'],
-  ['¿Puedo sumar el 10% off a las 12 cuotas?','No, son beneficios distintos: el 10% off es pagando por transferencia y las 12 cuotas sin interés son con tarjeta de crédito.'],
-  ['¿El envío es gratis a todo el país?','Sí, todas las impresoras Bambu Lab de la promo tienen envío gratis a cualquier punto del país. El plazo de entrega lo ves al ingresar tu código postal.'],
+  ['¿Puedo sumar el 10% off a las cuotas sin interés?','No, son beneficios distintos: el 10% off es pagando por transferencia y las cuotas sin interés son con tarjeta de crédito.'],
+  ['¿El envío es gratis a todo el país?','Sí, todas las impresoras de la promo tienen envío gratis a cualquier punto del país. El plazo de entrega lo ves al ingresar tu código postal.'],
   ['¿Hasta cuándo dura la promo?','Desde el 28/10 a las 10 h hasta el 6/11 a las 10 h, o hasta agotar stock.']
 ];
 
 /* ========================================================= */
 const $ = (id) => document.getElementById(id);
 const fmt = (v) => '$' + String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-const cuota = (p) => fmt(Math.ceil(p.t / 12));
+const cuota = (p) => fmt(Math.ceil(p.t / p.c));
+const full = (p) => p.b + ' ' + p.n;
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const NS = 'http://www.w3.org/2000/svg';
 const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
@@ -519,7 +614,7 @@ floor($('comboFloor'), { w: 1200, h: 340, hz: 240, glow: '#fff', line: '#fff', l
 
 /* Cinta */
 (() => {
-  const items = ['12 CUOTAS SIN INTERÉS', 'ENVÍO GRATIS A TODO EL PAÍS', '10% OFF POR TRANSFERENCIA', 'DEL 28/10 AL 6/11'];
+  const items = ['HASTA 12 CUOTAS SIN INTERÉS', 'ENVÍO GRATIS A TODO EL PAÍS', '10% OFF POR TRANSFERENCIA', 'DEL 28/10 AL 6/11'];
   let h = '';
   for (let r = 0; r < 4; r++) items.forEach((t) => { h += `<span class="t">${t}</span><span>✦</span>`; });
   $('ticker').innerHTML = h;
@@ -527,11 +622,12 @@ floor($('comboFloor'), { w: 1200, h: 340, hz: 240, glow: '#fff', line: '#fff', l
 
 /* ---------- Carrusel ---------- */
 let cur = 0, timer = null, paused = false;
+const hero = document.querySelector('.hero');
 const stage = $('stage'), hImg = $('hImg'), hShadow = $('hShadow');
 const dotsBox = $('dots');
 SLIDES.forEach((key, k) => {
   const b = document.createElement('button');
-  b.setAttribute('aria-label', `Ver ${P[key].n}`);
+  b.setAttribute('aria-label', `Ver ${full(P[key])}`);
   b.addEventListener('click', () => go(k, true));
   dotsBox.appendChild(b);
 });
@@ -547,15 +643,19 @@ function placeHero() {
 }
 function renderSlide() {
   const p = P[SLIDES[cur]];
-  const col = cur % 2 ? 'var(--lilac)' : 'var(--accent)';
+  const col = p.b === 'Snapmaker' ? '#fff' : p.b === 'Anycubic' ? 'var(--accent)' : (cur % 2 ? 'var(--lilac)' : 'var(--accent)');
+  hero.dataset.brand = p.b;
+  $('hName').style.color = p.b === 'Snapmaker' ? 'var(--ground)' : '';
   $('hName').textContent = p.n.toUpperCase();
   $('hPrice').textContent = cuota(p);
+  $('hBrand').textContent = p.b.toUpperCase();
+  $('hLead').textContent = p.c + ' CUOTAS SIN INTERÉS DE';
   $('hPrice').style.color = col;
   $('hList').textContent = fmt(p.t);
   $('hCart').href = p.url; $('hInfo').href = p.url;
-  $('hCart').setAttribute('aria-label', `Comprar ${p.n}`);
+  $('hCart').setAttribute('aria-label', `Comprar ${full(p)}`);
   $('hInfo').setAttribute('aria-label', `Ver detalles de ${p.n}`);
-  hImg.src = p.img; hImg.alt = 'Bambu Lab ' + p.n;
+  hImg.src = p.img; hImg.alt = full(p);
   placeHero();
   [...dotsBox.children].forEach((d, k) => {
     d.setAttribute('aria-current', k === cur ? 'true' : 'false');
@@ -573,7 +673,6 @@ function go(k, user) {
 function restart() { clearInterval(timer); timer = setInterval(() => { if (!paused && !document.hidden) go(cur + 1); }, CONFIG.slideEveryMs); }
 $('prev').addEventListener('click', () => go(cur - 1, true));
 $('next').addEventListener('click', () => go(cur + 1, true));
-const hero = document.querySelector('.hero');
 hero.addEventListener('mouseenter', () => paused = true);
 hero.addEventListener('mouseleave', () => paused = false);
 hero.addEventListener('focusin', () => paused = true);
@@ -619,17 +718,19 @@ function renderPanel(animate) {
     [...tabsBox.children].forEach((b, k) => { b.setAttribute('aria-selected', k === tab); b.tabIndex = k === tab ? 0 : -1; });
     panel.setAttribute('aria-labelledby', 'tab' + tab);
     $('pBadge').textContent = swap ? 'Alternativa: ' + t.why.toLowerCase() : t.b;
-    $('pImg').src = q.img; $('pImg').alt = 'Bambu Lab ' + q.n; $('pImg').width = q.w; $('pImg').height = q.h;
+    $('pImg').src = q.img; $('pImg').alt = full(q); $('pImg').width = q.w; $('pImg').height = q.h;
     $('pName').textContent = q.n;
     $('pReasons').innerHTML = REASONS[mk].map((r) => `<li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>${r}</li>`).join('');
     $('pPrice').textContent = cuota(q);
+    $('pBrand').textContent = q.b.toUpperCase();
+    $('pLead').textContent = q.c + ' cuotas sin interés de';
     $('pMeta').textContent = `Precio de lista: ${fmt(q.t)} · Por transferencia: ${fmt(Math.round(q.t * .9))}`;
     $('pCart').href = q.url; $('pInfo').href = q.url;
     $('aLbl').textContent = swap ? 'LA RECOMENDADA PARA ESTO' : 'TAMBIÉN TE PUEDE SERVIR';
-    $('aImg').src = a.img; $('aImg').alt = 'Bambu Lab ' + a.n;
+    $('aImg').src = a.img; $('aImg').alt = full(a);
     $('aName').textContent = a.n;
     $('aWhy').textContent = swap ? t.b : t.why;
-    $('aPrice').textContent = '12 cuotas de ' + cuota(a);
+    $('aPrice').textContent = a.c + ' cuotas de ' + cuota(a);
     $('aCta').textContent = swap ? '← Volver a la recomendada' : 'Ver por qué';
     $('alt').setAttribute('aria-label', swap ? `Volver a la recomendada: ${a.n}` : `Ver la alternativa: ${a.n}`);
   };
@@ -645,16 +746,38 @@ $('goCombos').addEventListener('click', () => { tab = 1; swap = false; renderPan
 $('cards').innerHTML = CATALOG.map((key) => {
   const p = P[key];
   return `<li class="card">
-    <div class="card-img"><img src="${p.img}" alt="Bambu Lab ${p.n}" width="${p.w}" height="${p.h}" loading="lazy"></div>
+    <div class="card-img"><img src="${p.img}" alt="${full(p)}" width="${p.w}" height="${p.h}" loading="lazy"></div>
     <div class="card-body">
       <h3><a href="${p.url}" style="color:inherit;text-decoration:none">${p.n}</a></h3>
-      <div class="lead">12 cuotas sin interés de</div>
+      <div class="lead">${p.c} cuotas sin interés de</div>
       <div class="price">${cuota(p)}</div>
       <div class="meta">Precio de lista: ${fmt(p.t)}</div>
-      <a class="btn btn-ground" href="${p.url}" aria-label="Comprar ${p.n}">Comprar</a>
+      <a class="btn btn-ground" href="${p.url}" aria-label="Comprar ${full(p)}">Comprar</a>
     </div>
   </li>`;
 }).join('');
+
+const ICON = {
+  cover: '<svg class="ph" viewBox="0 0 96 96" fill="none" stroke="#C45BF0" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M14 40 L48 24 L82 40 L82 76 L14 76 Z"/><path d="M14 40 L48 56 L82 40"/><path d="M48 56 V76"/><path d="M34 33 L62 46" opacity=".5"/></svg>',
+  resin: '<svg class="ph" viewBox="0 0 96 96" fill="none" stroke="#2F4BD6" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="38" y="10" width="20" height="10" rx="2"/><path d="M30 24 h36 l4 8 v52 a4 4 0 0 1 -4 4 h-36 a4 4 0 0 1 -4 -4 v-52 z"/><path d="M26 50 h44"/><path d="M38 64 h20" opacity=".5"/></svg>'
+};
+document.querySelectorAll('.minis').forEach((ul) => {
+  ul.innerHTML = ul.dataset.items.split(',').map((key) => {
+    const p = P[key];
+    const pic = p.img ? `<img src="${p.img}" alt="${p.d}" loading="lazy">` : ICON[p.icon];
+    return `<li class="mini">
+      <div class="mini-img">${pic}</div>
+      <div class="mini-body">
+        <h4><a href="${p.url}">${p.d}</a></h4>
+        <div class="lead">${p.c} cuotas sin interés de</div>
+        <div class="price">${cuota(p)}</div>
+        <div class="meta">Precio de lista: ${fmt(p.t)}</div>
+        <div class="transf">Por transferencia: ${fmt(Math.round(p.t * .9))}</div>
+        <a class="btn" href="${p.url}" aria-label="Comprar ${p.d}">Comprar</a>
+      </div>
+    </li>`;
+  }).join('');
+});
 
 /* ---------- FAQ ---------- */
 let open = 0;
