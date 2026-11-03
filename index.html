@@ -233,6 +233,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .mini .transf{font-size:11px;font-weight:700;margin-bottom:12px}
 .mini .btn{margin-top:auto;height:40px;border-radius:12px;font-size:13px;background:var(--ground);color:#fff}
 .any .mini .btn{background:var(--blue)}
+/* Un solo producto por marca: tarjeta horizontal */
+.minis.single{grid-template-columns:1fr}
+.minis.single .mini{flex-direction:row}
+.minis.single .mini-img{width:46%;height:auto;min-height:250px;align-items:center;padding:18px}
+.minis.single .mini-img img{max-height:220px}
+.minis.single .mini-body{padding:22px 22px 22px;justify-content:center}
+.minis.single .mini h4{font-size:20px}
+.minis.single .mini .price{font-size:30px}
+.minis.single .mini .btn{margin-top:4px}
+@media (max-width:480px){.minis.single .mini{flex-direction:column}.minis.single .mini-img{width:100%;min-height:200px}.minis.single .mini-img img{max-height:170px}}
 @media (max-width:980px){.join-grid{grid-template-columns:1fr;max-width:600px}}
 @media (max-width:640px){
   .news strong{font-size:13px}
@@ -468,17 +478,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <div class="brandbox-head">
         <div class="kick">SE SUMA AL CYBER 3D</div>
         <h3>SNAPMAKER</h3>
-        <div class="row"><span class="chip">12 CUOTAS SIN INTERÉS</span><span class="what">U1 y Top Cover</span></div>
+        <div class="row"><span class="chip">12 CUOTAS SIN INTERÉS</span><span class="what">Snapmaker U1</span></div>
       </div>
-      <ul class="minis" data-items="snapmaker-u1,top-cover"></ul>
+      <ul class="minis" data-items="snapmaker-u1"></ul>
     </article>
     <article class="brandbox any" id="anycubic">
       <div class="brandbox-head">
         <div class="kick">SE SUMA AL CYBER 3D</div>
         <h3>ANYCUBIC</h3>
-        <div class="row"><span class="chip">6 CUOTAS SIN INTERÉS</span><span class="what">Kobra X y resina</span></div>
+        <div class="row"><span class="chip">6 CUOTAS SIN INTERÉS</span><span class="what">Resina estándar 1 kg</span></div>
       </div>
-      <ul class="minis" data-items="kobra-x,resina"></ul>
+      <ul class="minis" data-items="resina"></ul>
     </article>
   </div>
 </section>
@@ -533,7 +543,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <a class="btn store" id="storeLink" href="#">Ir a la tienda completa</a>
       </div>
     </div>
-    <p class="legal">Promoción válida desde el 28/10 a las 10 h hasta el 6/11 a las 10 h de 2026, o hasta agotar stock. 12 cuotas sin interés en impresoras Bambu Lab y Snapmaker U1, y 6 cuotas sin interés en Anycubic Kobra X, con tarjetas seleccionadas. 10% off pagando por transferencia bancaria.</p>
+    <p class="legal">Promoción válida desde el 28/10 a las 10 h hasta el 6/11 a las 10 h de 2026, o hasta agotar stock. 12 cuotas sin interés en impresoras Bambu Lab y Snapmaker U1, y 6 cuotas sin interés en resina Anycubic, con tarjetas seleccionadas. 10% off pagando por transferencia bancaria.</p>
   </div>
 </footer>
 
@@ -549,31 +559,29 @@ const CONFIG = {
 };
 const P = { // precio de lista en pesos, cuota = lista / 12
   'a2l-combo':     { b:'Bambu Lab', c:12, n:'A2L Combo',     img:'assets/a2l-combo.webp',     w:876, h:661, t:1832900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a2l-combo-eqmnl/' },
-  'a1-mini':       { b:'Bambu Lab', c:12, n:'A1 mini',       img:'assets/a1-mini.webp',       w:500, h:678, t:578900,  url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-mini/' },
   'a1-mini-combo': { b:'Bambu Lab', c:12, n:'A1 mini Combo', img:'assets/a1-mini-combo.webp', w:936, h:733, t:1056900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-mini-combo/' },
   'a1':            { b:'Bambu Lab', c:12, n:'A1',            img:'assets/a1.webp',            w:591, h:655, t:968900,  url:'https://www.gst3d.com.ar/productos/bambu-lab-a1/' },
+  'a1-combo':      { b:'Bambu Lab', c:12, n:'A1 Combo',      img:'assets/a1-combo.webp',      w:813, h:635, t:1464900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-combo/' },
   'a2l':           { b:'Bambu Lab', c:12, n:'A2L',           img:'assets/a2l.webp',           w:745, h:804, t:1373900, url:'https://www.gst3d.com.ar/productos/impresora-3d-bambu-lab-a2l-estandar-vtyi2/' },
   'snapmaker-u1':  { b:'Snapmaker', c:12, n:'U1',      img:'assets/snapmaker-u1.webp',  w:750, h:800, t:2290000, url:'https://www.gst3d.com.ar/productos/preventa-snapmaker-u1/', d:'Snapmaker U1' },
-  'kobra-x':       { b:'Anycubic',  c:6,  n:'Kobra X', img:'assets/kobra-x.webp',       w:507, h:752, t:1089000, url:'https://www.gst3d.com.ar/productos/preventa-septiembre-impresora-3d-anycubic-kobra-x-14mdb/', d:'Anycubic Kobra X' },
-  'top-cover':     { b:'Snapmaker', c:12, n:'Top Cover Popcap', d:'Top Cover Popcap', img:'assets/top-cover.webp', w:800, h:651, t:219000, url:'https://www.gst3d.com.ar/productos/top-cover-popcap-tapa-superior-snapmaker-u1-10xen/' },
   'resina':        { b:'Anycubic',  c:6,  n:'Resina estándar 1 kg', d:'Resina estándar 1 kg', img:'assets/resina.webp', w:539, h:644, t:34990, url:'https://www.gst3d.com.ar/productos/resina-estandar-1kg-anycubic-dtk5k/' }
 };
-const SLIDES  = ['a2l-combo','a1-mini','a1-mini-combo','a1','a2l','snapmaker-u1','kobra-x'];
-const CATALOG = ['a1-mini','a1-mini-combo','a1','a2l','a2l-combo'];
+const SLIDES  = ['a2l-combo','a1-combo','a1-mini-combo','a1','a2l','snapmaker-u1'];
+const CATALOG = ['a1','a1-mini-combo','a2l','a1-combo','a2l-combo'];
 const REASONS = {
   'a2l-combo':     ['Piezas grandes y a todo color','Hasta 4 colores sin cambiar el filamento a mano','La más completa de la línea'],
-  'a1-mini':       ['Se arma en minutos y se calibra sola','Compacta: entra en cualquier escritorio','La forma más accesible de arrancar en 3D'],
   'a1-mini-combo': ['Imprime hasta 4 colores en una misma pieza','Cambia de filamento sola, sin que intervengas','El combo más accesible para arrancar a color'],
-  'a1':            ['Más espacio para piezas más grandes','Igual de simple: se arma rápido y se calibra sola','Para crecer sin complicarte'],
+  'a1':            ['Se arma en minutos y se calibra sola','Buen espacio de impresión para crecer sin cambiar de máquina','La forma más simple de arrancar en 3D'],
+  'a1-combo':      ['Imprime hasta 4 colores en una misma pieza','Más espacio de impresión para piezas a color','Se arma rápido y se calibra sola'],
   'a2l':           ['La de mayor espacio de impresión de la línea','Piezas grandes de una sola vez, sin dividirlas','Ideal para emprendimientos y producción']
 };
 const TABS = [
-  { label:'Empezar en 3D',     b:'La mejor para empezar',          p:'a1-mini',       alt:'a1',        why:'Si querés imprimir piezas más grandes' },
+  { label:'Empezar en 3D',     b:'La mejor para empezar',          p:'a1',            alt:'a1-combo',  why:'Si además querés imprimir a color' },
   { label:'A todo color',      b:'La mejor para imprimir a color', p:'a1-mini-combo', alt:'a2l-combo', why:'Si querés color en piezas grandes' },
   { label:'Proyectos grandes', b:'La mejor para piezas grandes',   p:'a2l',           alt:'a2l-combo', why:'Si además querés imprimir a color' }
 ];
 const FAQ = [
-  ['¿En cuántas cuotas sin interés puedo pagar?','Las impresoras Bambu Lab y la Snapmaker U1 van en 12 cuotas sin interés, y la Anycubic Kobra X en 6, con tarjetas de crédito bancarias seleccionadas. Al elegir el medio de pago vas a ver todas las opciones disponibles para tu tarjeta.'],
+  ['¿En cuántas cuotas sin interés puedo pagar?','Las impresoras Bambu Lab y la Snapmaker U1 van en 12 cuotas sin interés, y la resina Anycubic en 6, con tarjetas de crédito bancarias seleccionadas. Al elegir el medio de pago vas a ver todas las opciones disponibles para tu tarjeta.'],
   ['¿Cómo aprovecho el 10% off?','Elegí transferencia bancaria como medio de pago al finalizar la compra y el descuento se aplica sobre el precio de lista.'],
   ['¿Puedo sumar el 10% off a las cuotas sin interés?','No, son beneficios distintos: el 10% off es pagando por transferencia y las cuotas sin interés son con tarjeta de crédito.'],
   ['¿El envío es gratis a todo el país?','Sí, todas las impresoras de la promo tienen envío gratis a cualquier punto del país. El plazo de entrega lo ves al ingresar tu código postal.'],
@@ -762,7 +770,9 @@ const ICON = {
   resin: '<svg class="ph" viewBox="0 0 96 96" fill="none" stroke="#2F4BD6" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="38" y="10" width="20" height="10" rx="2"/><path d="M30 24 h36 l4 8 v52 a4 4 0 0 1 -4 4 h-36 a4 4 0 0 1 -4 -4 v-52 z"/><path d="M26 50 h44"/><path d="M38 64 h20" opacity=".5"/></svg>'
 };
 document.querySelectorAll('.minis').forEach((ul) => {
-  ul.innerHTML = ul.dataset.items.split(',').map((key) => {
+  const keys = ul.dataset.items.split(',');
+  if (keys.length === 1) ul.classList.add('single');
+  ul.innerHTML = keys.map((key) => {
     const p = P[key];
     const pic = p.img ? `<img src="${p.img}" alt="${p.d}" loading="lazy">` : ICON[p.icon];
     return `<li class="mini">
