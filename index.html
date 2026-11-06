@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cyber 3D · Impresoras 3D en hasta 12 cuotas sin interés | GST3D</title>
-<meta name="description" content="Del 28/10 al 6/11: impresoras Bambu Lab, Snapmaker y Anycubic en hasta 12 cuotas sin interés, envío gratis a todo el país y 10% off por transferencia.">
+<meta name="description" content="Del 28/10 al 6/11: Snapmaker U1 en 12 cuotas sin interés, resina Anycubic en 6 cuotas sin interés y 10% off por transferencia.">
 <meta name="theme-color" content="#6A3BD8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -357,23 +357,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="wrap">
     <a class="logo" href="#top" aria-label="GST3D, inicio"><img src="assets/logo-gst3d.webp" alt="GST3D" width="68" height="60"></a>
     <nav class="nav" aria-label="Secciones">
-      <a href="#impresoras">Ofertas</a>
-      <a href="#elegi">¿Cuál elegir?</a>
-      <a href="#combos">Combos</a>
+      <a href="#novedades">Ofertas</a>
       <a href="#snapmaker">Snapmaker</a>
       <a href="#anycubic">Anycubic</a>
       <a href="#preguntas">Preguntas</a>
     </nav>
-    <a class="btn" href="#impresoras">Ver impresoras</a>
+    <a class="btn" href="#novedades">Ver ofertas</a>
   </div>
 </header>
-
-<div class="news">
-  <div class="wrap">
-    <strong>¡NUEVO! Se suman Snapmaker y Anycubic al Cyber 3D</strong>
-    <a href="#novedades">Ver novedades →</a>
-  </div>
-</div>
 
 <main id="top">
 
@@ -395,10 +386,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         </svg>
         <div class="pill">DEL 28/10 AL 6/11</div>
       </div>
-      <div class="hero-model"><span id="hBrand" style="color:inherit">BAMBU LAB</span> <span id="hName">A2L COMBO</span></div>
+      <div class="hero-model"><span id="hBrand" style="color:inherit">SNAPMAKER</span> <span id="hName">U1</span></div>
       <div class="hero-lead" id="hLead">12 CUOTAS SIN INTERÉS DE</div>
-      <div class="hero-price" id="hPrice">$152.742</div>
-      <div class="hero-list">Precio de lista: <span id="hList">$1.832.900</span></div>
+      <div class="hero-price" id="hPrice">$190.834</div>
+      <div class="hero-list">Precio de lista: <span id="hList">$2.290.000</span></div>
       <div class="hero-ctas">
         <a class="btn btn-accent" id="hCart" href="#">Comprar</a>
         <a class="btn btn-ghost" id="hInfo" href="#">Ver detalles</a>
@@ -413,7 +404,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </div>
     <div class="hero-stage" id="stage">
       <div class="shadow" id="hShadow"></div>
-      <img id="hImg" src="assets/a2l-combo.webp" alt="Bambu Lab A2L Combo" width="876" height="661">
+      <img id="hImg" src="assets/snapmaker-u1.webp" alt="Snapmaker U1" width="750" height="800">
     </div>
   </div>
   <button class="arrow prev" id="prev" aria-label="Oferta anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
@@ -422,61 +413,20 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </section>
 
 <!-- CINTA -->
-<div class="ticker" aria-label="Hasta 12 cuotas sin interés, envío gratis a todo el país, 10% off por transferencia, del 28/10 al 6/11">
+<div class="ticker" aria-label="Hasta 12 cuotas sin interés, envíos a todo el país, 10% off por transferencia, del 28/10 al 6/11">
   <div class="ticker-track" id="ticker" aria-hidden="true"></div>
 </div>
-
-<!-- ¿CUÁL ELEGIR? -->
-<section class="choose" id="elegi">
-  <div class="sec-head">
-    <h2>¿Qué querés imprimir?</h2>
-    <p>Elegí y te mostramos la impresora ideal para vos</p>
-  </div>
-  <div class="tabs" role="tablist" aria-label="Qué querés imprimir" id="tabs"></div>
-  <div class="panel" id="panel" role="tabpanel" aria-live="polite">
-    <div class="panel-img">
-      <div class="badge" id="pBadge"></div>
-      <img id="pImg" src="" alt="">
-    </div>
-    <div class="panel-info">
-      <div class="kicker" id="pBrand">BAMBU LAB</div>
-      <h3 id="pName"></h3>
-      <ul class="reasons" id="pReasons"></ul>
-      <div class="lead" id="pLead">12 cuotas sin interés de</div>
-      <div class="price" id="pPrice"></div>
-      <div class="meta" id="pMeta"></div>
-      <div class="panel-ctas">
-        <a class="btn btn-ground" id="pCart" href="#">Comprar</a>
-        <a class="btn btn-outline" id="pInfo" href="#">Ver detalles</a>
-      </div>
-    </div>
-    <button class="alt" id="alt" type="button">
-      <span class="alt-lbl" id="aLbl"></span>
-      <span class="alt-stage"><img id="aImg" src="" alt=""></span>
-      <span class="alt-name" id="aName"></span>
-      <span class="alt-why" id="aWhy"></span>
-      <span class="alt-price" id="aPrice"></span>
-      <span class="alt-cta" id="aCta"></span>
-    </button>
-  </div>
-</section>
-
-<!-- TODAS -->
-<section class="catalog" id="impresoras">
-  <h2>Todas las Bambu Lab</h2>
-  <ul class="cards" id="cards"></ul>
-</section>
 
 <!-- SE SUMAN -->
 <section class="joins" id="novedades">
   <div class="sec-head">
-    <h2>Se suman al Cyber 3D</h2>
-    <p>Desde el 30/10, también Snapmaker y Anycubic con cuotas sin interés</p>
+    <h2>Ofertas Cyber 3D</h2>
+    <p>Snapmaker y Anycubic con cuotas sin interés</p>
   </div>
   <div class="join-grid">
     <article class="brandbox snap" id="snapmaker">
       <div class="brandbox-head">
-        <div class="kick">SE SUMA AL CYBER 3D</div>
+        <div class="kick">CYBER 3D</div>
         <h3>SNAPMAKER</h3>
         <div class="row"><span class="chip">12 CUOTAS SIN INTERÉS</span><span class="what">Snapmaker U1</span></div>
       </div>
@@ -484,7 +434,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </article>
     <article class="brandbox any" id="anycubic">
       <div class="brandbox-head">
-        <div class="kick">SE SUMA AL CYBER 3D</div>
+        <div class="kick">CYBER 3D</div>
         <h3>ANYCUBIC</h3>
         <div class="row"><span class="chip">6 CUOTAS SIN INTERÉS</span><span class="what">Resina estándar 1 kg</span></div>
       </div>
@@ -492,23 +442,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </article>
   </div>
 </section>
-
-<!-- COMBOS -->
-<div class="combos-wrap">
-  <section class="combos" id="combos">
-    <svg class="floor" id="comboFloor" viewBox="0 0 1200 340" preserveAspectRatio="xMaxYMax slice" aria-hidden="true"></svg>
-    <div class="combos-copy">
-      <div class="kick">COMBOS</div>
-      <h2>Imprimí<br>a todo color</h2>
-      <p>También en 12 cuotas sin interés</p>
-      <a class="btn btn-ground" href="#elegi" id="goCombos">Ver combos</a>
-    </div>
-    <div class="combos-art">
-      <img class="c1" src="assets/a1-mini-combo.webp" alt="Bambu Lab A1 mini Combo" width="936" height="733" loading="lazy">
-      <img class="c2" src="assets/a2l-combo.webp" alt="Bambu Lab A2L Combo" width="876" height="661" loading="lazy">
-    </div>
-  </section>
-</div>
 
 <!-- FAQ -->
 <section class="faq" id="preguntas">
@@ -522,18 +455,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="wrap">
     <div class="foot-cta">
       <div>
-        <h2>Tu impresora 3D en hasta <span>12 cuotas</span> sin interés</h2>
-        <p>La promo termina el 6/11 a las 10 h. Envío gratis a todo el país.</p>
+        <h2>Tu Snapmaker U1 en <span>12 cuotas</span> sin interés</h2>
+        <p>La promo termina el 6/11 a las 10 h. Envíos a todo el país.</p>
       </div>
-      <a class="btn" href="#impresoras">Elegí tu impresora</a>
+      <a class="btn" href="#novedades">Ver ofertas</a>
     </div>
     <hr>
     <div class="foot-row">
       <a class="logo" href="#top" aria-label="GST3D, volver arriba"><img src="assets/logo-gst3d.webp" alt="GST3D" width="80" height="71" loading="lazy"></a>
       <nav class="foot-nav" aria-label="Secciones">
-        <a href="#impresoras">Ofertas</a>
-        <a href="#elegi">¿Cuál elegir?</a>
-        <a href="#combos">Combos</a>
+        <a href="#novedades">Ofertas</a>
         <a href="#snapmaker">Snapmaker</a>
         <a href="#anycubic">Anycubic</a>
         <a href="#preguntas">Preguntas</a>
@@ -543,7 +474,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <a class="btn store" id="storeLink" href="#">Ir a la tienda completa</a>
       </div>
     </div>
-    <p class="legal">Promoción válida desde el 28/10 a las 10 h hasta el 6/11 a las 10 h de 2026, o hasta agotar stock. 12 cuotas sin interés en impresoras Bambu Lab y Snapmaker U1, y 6 cuotas sin interés en resina Anycubic, con tarjetas seleccionadas. 10% off pagando por transferencia bancaria.</p>
+    <p class="legal">Promoción válida desde el 28/10 a las 10 h hasta el 6/11 a las 10 h de 2026, o hasta agotar stock. 12 cuotas sin interés en Snapmaker U1 y 6 cuotas sin interés en resina Anycubic, con tarjetas seleccionadas. 10% off pagando por transferencia bancaria.</p>
   </div>
 </footer>
 
@@ -557,34 +488,16 @@ const CONFIG = {
   store:      'https://www.gst3d.com.ar/',
   slideEveryMs: 6000
 };
-const P = { // precio de lista en pesos, cuota = lista / 12
-  'a2l-combo':     { b:'Bambu Lab', c:12, n:'A2L Combo',     img:'assets/a2l-combo.webp',     w:876, h:661, t:1832900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a2l-combo-eqmnl/' },
-  'a1-mini-combo': { b:'Bambu Lab', c:12, n:'A1 mini Combo', img:'assets/a1-mini-combo.webp', w:936, h:733, t:1056900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-mini-combo/' },
-  'a1':            { b:'Bambu Lab', c:12, n:'A1',            img:'assets/a1.webp',            w:591, h:655, t:968900,  url:'https://www.gst3d.com.ar/productos/bambu-lab-a1/' },
-  'a1-combo':      { b:'Bambu Lab', c:12, n:'A1 Combo',      img:'assets/a1-combo.webp',      w:813, h:635, t:1464900, url:'https://www.gst3d.com.ar/productos/bambu-lab-a1-combo/' },
-  'a2l':           { b:'Bambu Lab', c:12, n:'A2L',           img:'assets/a2l.webp',           w:745, h:804, t:1373900, url:'https://www.gst3d.com.ar/productos/impresora-3d-bambu-lab-a2l-estandar-vtyi2/' },
+const P = { // precio de lista en pesos; c = cantidad de cuotas sin interés
   'snapmaker-u1':  { b:'Snapmaker', c:12, n:'U1',      img:'assets/snapmaker-u1.webp',  w:750, h:800, t:2290000, url:'https://www.gst3d.com.ar/productos/preventa-snapmaker-u1/', d:'Snapmaker U1' },
   'resina':        { b:'Anycubic',  c:6,  n:'Resina estándar 1 kg', d:'Resina estándar 1 kg', img:'assets/resina.webp', w:539, h:644, t:34990, url:'https://www.gst3d.com.ar/productos/resina-estandar-1kg-anycubic-dtk5k/' }
 };
-const SLIDES  = ['a2l-combo','a1-combo','a1-mini-combo','a1','a2l','snapmaker-u1'];
-const CATALOG = ['a1','a1-mini-combo','a2l','a1-combo','a2l-combo'];
-const REASONS = {
-  'a2l-combo':     ['Piezas grandes y a todo color','Hasta 4 colores sin cambiar el filamento a mano','La más completa de la línea'],
-  'a1-mini-combo': ['Imprime hasta 4 colores en una misma pieza','Cambia de filamento sola, sin que intervengas','El combo más accesible para arrancar a color'],
-  'a1':            ['Se arma en minutos y se calibra sola','Buen espacio de impresión para crecer sin cambiar de máquina','La forma más simple de arrancar en 3D'],
-  'a1-combo':      ['Imprime hasta 4 colores en una misma pieza','Más espacio de impresión para piezas a color','Se arma rápido y se calibra sola'],
-  'a2l':           ['La de mayor espacio de impresión de la línea','Piezas grandes de una sola vez, sin dividirlas','Ideal para emprendimientos y producción']
-};
-const TABS = [
-  { label:'Empezar en 3D',     b:'La mejor para empezar',          p:'a1',            alt:'a1-combo',  why:'Si además querés imprimir a color' },
-  { label:'A todo color',      b:'La mejor para imprimir a color', p:'a1-mini-combo', alt:'a2l-combo', why:'Si querés color en piezas grandes' },
-  { label:'Proyectos grandes', b:'La mejor para piezas grandes',   p:'a2l',           alt:'a2l-combo', why:'Si además querés imprimir a color' }
-];
+const SLIDES  = ['snapmaker-u1','resina'];
 const FAQ = [
-  ['¿En cuántas cuotas sin interés puedo pagar?','Las impresoras Bambu Lab y la Snapmaker U1 van en 12 cuotas sin interés, y la resina Anycubic en 6, con tarjetas de crédito bancarias seleccionadas. Al elegir el medio de pago vas a ver todas las opciones disponibles para tu tarjeta.'],
+  ['¿En cuántas cuotas sin interés puedo pagar?','La Snapmaker U1 va en 12 cuotas sin interés y la resina Anycubic en 6, con tarjetas de crédito bancarias seleccionadas. Al elegir el medio de pago vas a ver todas las opciones disponibles para tu tarjeta.'],
   ['¿Cómo aprovecho el 10% off?','Elegí transferencia bancaria como medio de pago al finalizar la compra y el descuento se aplica sobre el precio de lista.'],
   ['¿Puedo sumar el 10% off a las cuotas sin interés?','No, son beneficios distintos: el 10% off es pagando por transferencia y las cuotas sin interés son con tarjeta de crédito.'],
-  ['¿El envío es gratis a todo el país?','Sí, todas las impresoras de la promo tienen envío gratis a cualquier punto del país. El plazo de entrega lo ves al ingresar tu código postal.'],
+  ['¿El envío es gratis?','Es gratis desde $50.000 en CABA y GBA, desde $120.000 en el interior y desde $280.000 en Tierra del Fuego, así que la Snapmaker U1 viaja gratis a todo el país. El costo y el plazo los ves al ingresar tu código postal.'],
   ['¿Hasta cuándo dura la promo?','Desde el 28/10 a las 10 h hasta el 6/11 a las 10 h, o hasta agotar stock.']
 ];
 
@@ -617,12 +530,9 @@ function floor(svg, o) {
 }
 floor($('heroFloor'), { w: 1440, h: 640, hz: 430, glow: '#B79BFF', line: '#B79BFF', lo: .7, gx: 1010, gy: 300, gr: 420, t0: -876.4, ts: 82.97, rows: [438, 456.9, 484.7, 520.5, 563.7, 614],
   after: (svg) => { const t = el('text', { x: 1010, y: 560, 'text-anchor': 'middle', 'font-family': "Unbounded, 'Arial Black', Arial, sans-serif", 'font-weight': 900, 'font-size': 460, fill: 'none', stroke: '#fff', 'stroke-opacity': .09, 'stroke-width': 3 }, svg); t.textContent = '3D'; } });
-floor($('comboFloor'), { w: 1200, h: 340, hz: 240, glow: '#fff', line: '#fff', lo: .3, gx: 880, gy: 170, gr: 280, t0: -1488.9, ts: 108.33, rows: [248, 266.9, 294.7, 330.5],
-  after: (svg, id) => { [[760, 302], [1040, 304]].forEach(([cx, cy]) => el('ellipse', { cx, cy, rx: 160, ry: 12, fill: '#000', 'fill-opacity': .55, filter: `url(#${id}s)` }, svg)); } });
-
 /* Cinta */
 (() => {
-  const items = ['HASTA 12 CUOTAS SIN INTERÉS', 'ENVÍO GRATIS A TODO EL PAÍS', '10% OFF POR TRANSFERENCIA', 'DEL 28/10 AL 6/11'];
+  const items = ['HASTA 12 CUOTAS SIN INTERÉS', 'ENVÍOS A TODO EL PAÍS', '10% OFF POR TRANSFERENCIA', 'DEL 28/10 AL 6/11'];
   let h = '';
   for (let r = 0; r < 4; r++) items.forEach((t) => { h += `<span class="t">${t}</span><span>✦</span>`; });
   $('ticker').innerHTML = h;
@@ -703,67 +613,6 @@ function tick() {
   if (d === 0) $('cdLbl').textContent = 'PROMO FINALIZADA';
 }
 tick(); setInterval(tick, 1000);
-
-/* ---------- ¿Cuál elegir? ---------- */
-let tab = 1, swap = false;
-const tabsBox = $('tabs'), panel = $('panel');
-TABS.forEach((t, k) => {
-  const b = document.createElement('button');
-  b.setAttribute('role', 'tab'); b.id = 'tab' + k; b.textContent = t.label;
-  b.addEventListener('click', () => { tab = k; swap = false; renderPanel(true); });
-  b.addEventListener('keydown', (e) => {
-    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-    tab = (tab + (e.key === 'ArrowRight' ? 1 : -1) + TABS.length) % TABS.length; swap = false;
-    renderPanel(true); tabsBox.children[tab].focus();
-  });
-  tabsBox.appendChild(b);
-});
-function renderPanel(animate) {
-  const t = TABS[tab];
-  const mk = swap ? t.alt : t.p, ak = swap ? t.p : t.alt;
-  const q = P[mk], a = P[ak];
-  const paint = () => {
-    [...tabsBox.children].forEach((b, k) => { b.setAttribute('aria-selected', k === tab); b.tabIndex = k === tab ? 0 : -1; });
-    panel.setAttribute('aria-labelledby', 'tab' + tab);
-    $('pBadge').textContent = swap ? 'Alternativa: ' + t.why.toLowerCase() : t.b;
-    $('pImg').src = q.img; $('pImg').alt = full(q); $('pImg').width = q.w; $('pImg').height = q.h;
-    $('pName').textContent = q.n;
-    $('pReasons').innerHTML = REASONS[mk].map((r) => `<li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>${r}</li>`).join('');
-    $('pPrice').textContent = cuota(q);
-    $('pBrand').textContent = q.b.toUpperCase();
-    $('pLead').textContent = q.c + ' cuotas sin interés de';
-    $('pMeta').textContent = `Precio de lista: ${fmt(q.t)} · Por transferencia: ${fmt(Math.round(q.t * .9))}`;
-    $('pCart').href = q.url; $('pInfo').href = q.url;
-    $('aLbl').textContent = swap ? 'LA RECOMENDADA PARA ESTO' : 'TAMBIÉN TE PUEDE SERVIR';
-    $('aImg').src = a.img; $('aImg').alt = full(a);
-    $('aName').textContent = a.n;
-    $('aWhy').textContent = swap ? t.b : t.why;
-    $('aPrice').textContent = a.c + ' cuotas de ' + cuota(a);
-    $('aCta').textContent = swap ? '← Volver a la recomendada' : 'Ver por qué';
-    $('alt').setAttribute('aria-label', swap ? `Volver a la recomendada: ${a.n}` : `Ver la alternativa: ${a.n}`);
-  };
-  if (!animate || reduced) { paint(); return; }
-  panel.classList.add('fade');
-  setTimeout(() => { paint(); requestAnimationFrame(() => panel.classList.remove('fade')); }, 180);
-}
-$('alt').addEventListener('click', () => { swap = !swap; renderPanel(true); });
-renderPanel(false);
-$('goCombos').addEventListener('click', () => { tab = 1; swap = false; renderPanel(true); });
-
-/* ---------- Catálogo ---------- */
-$('cards').innerHTML = CATALOG.map((key) => {
-  const p = P[key];
-  return `<li class="card">
-    <div class="card-img"><img src="${p.img}" alt="${full(p)}" width="${p.w}" height="${p.h}" loading="lazy"></div>
-    <div class="card-body">
-      <h3><a href="${p.url}" style="color:inherit;text-decoration:none">${p.n}</a></h3>
-      <div class="lead">${p.c} cuotas sin interés de</div>
-      <div class="price">${cuota(p)}</div>
-      <div class="meta">Precio de lista: ${fmt(p.t)}</div>
-      <a class="btn btn-ground" href="${p.url}" aria-label="Comprar ${full(p)}">Comprar</a>
-    </div>
-  </li>`;
-}).join('');
 
 const ICON = {
   cover: '<svg class="ph" viewBox="0 0 96 96" fill="none" stroke="#C45BF0" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M14 40 L48 24 L82 40 L82 76 L14 76 Z"/><path d="M14 40 L48 56 L82 40"/><path d="M48 56 V76"/><path d="M34 33 L62 46" opacity=".5"/></svg>',
