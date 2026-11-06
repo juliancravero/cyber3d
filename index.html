@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cyber 3D · Impresoras 3D en hasta 12 cuotas sin interés | GST3D</title>
-<meta name="description" content="Del 28/10 al 6/11: Snapmaker U1 en 12 cuotas sin interés, resina Anycubic en 6 cuotas sin interés y 10% off por transferencia.">
+<meta name="description" content="Del 28/10 al 9/11: Snapmaker U1 en 12 cuotas sin interés, resina Anycubic en 6 cuotas sin interés y 10% off por transferencia.">
 <meta name="theme-color" content="#6A3BD8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -384,7 +384,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
             <text x="205" y="330" font-size="168">3D</text>
           </g>
         </svg>
-        <div class="pill">DEL 28/10 AL 6/11</div>
+        <div class="pill">DEL 28/10 AL 9/11</div>
       </div>
       <div class="hero-model"><span id="hBrand" style="color:inherit">SNAPMAKER</span> <span id="hName">U1</span></div>
       <div class="hero-lead" id="hLead">12 CUOTAS SIN INTERÉS DE</div>
@@ -413,7 +413,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </section>
 
 <!-- CINTA -->
-<div class="ticker" aria-label="Hasta 12 cuotas sin interés, envíos a todo el país, 10% off por transferencia, del 28/10 al 6/11">
+<div class="ticker" aria-label="Hasta 12 cuotas sin interés, envíos a todo el país, 10% off por transferencia, del 28/10 al 9/11">
   <div class="ticker-track" id="ticker" aria-hidden="true"></div>
 </div>
 
@@ -456,7 +456,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="foot-cta">
       <div>
         <h2>Tu Snapmaker U1 en <span>12 cuotas</span> sin interés</h2>
-        <p>La promo termina el 6/11 a las 10 h. Envíos a todo el país.</p>
+        <p>La promo termina el 9/11 a las 10 h. Envíos a todo el país.</p>
       </div>
       <a class="btn" href="#novedades">Ver ofertas</a>
     </div>
@@ -474,7 +474,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <a class="btn store" id="storeLink" href="#">Ir a la tienda completa</a>
       </div>
     </div>
-    <p class="legal">Promoción válida desde el 28/10 a las 10 h hasta el 6/11 a las 10 h de 2026, o hasta agotar stock. 12 cuotas sin interés en Snapmaker U1 y 6 cuotas sin interés en resina Anycubic, con tarjetas seleccionadas. 10% off pagando por transferencia bancaria.</p>
+    <p class="legal">Promoción válida desde el 28/10 a las 10 h hasta el 9/11 a las 10 h de 2026, o hasta agotar stock. 12 cuotas sin interés en Snapmaker U1 y 6 cuotas sin interés en resina Anycubic, con tarjetas seleccionadas. 10% off pagando por transferencia bancaria.</p>
   </div>
 </footer>
 
@@ -483,7 +483,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
    CONFIGURACIÓN — editá precios y links acá
    ========================================================= */
 const CONFIG = {
-  promoEnd:   '2026-11-06T10:00:00-03:00',
+  promoEnd:   '2026-11-09T10:00:00-03:00',
   whatsapp:   'https://wa.me/5491176685027',
   store:      'https://www.gst3d.com.ar/',
   slideEveryMs: 6000
@@ -498,7 +498,7 @@ const FAQ = [
   ['¿Cómo aprovecho el 10% off?','Elegí transferencia bancaria como medio de pago al finalizar la compra y el descuento se aplica sobre el precio de lista.'],
   ['¿Puedo sumar el 10% off a las cuotas sin interés?','No, son beneficios distintos: el 10% off es pagando por transferencia y las cuotas sin interés son con tarjeta de crédito.'],
   ['¿El envío es gratis?','Es gratis desde $50.000 en CABA y GBA, desde $120.000 en el interior y desde $280.000 en Tierra del Fuego, así que la Snapmaker U1 viaja gratis a todo el país. El costo y el plazo los ves al ingresar tu código postal.'],
-  ['¿Hasta cuándo dura la promo?','Desde el 28/10 a las 10 h hasta el 6/11 a las 10 h, o hasta agotar stock.']
+  ['¿Hasta cuándo dura la promo?','Desde el 28/10 a las 10 h hasta el 9/11 a las 10 h, o hasta agotar stock.']
 ];
 
 /* ========================================================= */
@@ -532,7 +532,7 @@ floor($('heroFloor'), { w: 1440, h: 640, hz: 430, glow: '#B79BFF', line: '#B79BF
   after: (svg) => { const t = el('text', { x: 1010, y: 560, 'text-anchor': 'middle', 'font-family': "Unbounded, 'Arial Black', Arial, sans-serif", 'font-weight': 900, 'font-size': 460, fill: 'none', stroke: '#fff', 'stroke-opacity': .09, 'stroke-width': 3 }, svg); t.textContent = '3D'; } });
 /* Cinta */
 (() => {
-  const items = ['HASTA 12 CUOTAS SIN INTERÉS', 'ENVÍOS A TODO EL PAÍS', '10% OFF POR TRANSFERENCIA', 'DEL 28/10 AL 6/11'];
+  const items = ['HASTA 12 CUOTAS SIN INTERÉS', 'ENVÍOS A TODO EL PAÍS', '10% OFF POR TRANSFERENCIA', 'DEL 28/10 AL 9/11'];
   let h = '';
   for (let r = 0; r < 4; r++) items.forEach((t) => { h += `<span class="t">${t}</span><span>✦</span>`; });
   $('ticker').innerHTML = h;
